@@ -19,7 +19,10 @@ const LoginForm = () => {
         });
         if (result?.error) {
             setIsValid(false);
+            toast.error('Invalid Credentials!');
+            console.log(result.error);
         } else {
+            console.log(result.error);
             toast.success('Login successfully!');
             setTimeout(() => {
                 router.push('/home');
