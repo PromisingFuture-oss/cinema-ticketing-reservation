@@ -131,7 +131,7 @@
     }
     .text-field {
         display: block;
-        width: 100%;
+        width: 25rem;
         padding: 0.875rem 1.25rem;
         @apply rounded-md border-0 shadow-sm;
     }

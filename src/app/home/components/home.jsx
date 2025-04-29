@@ -2,19 +2,11 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-
-/* .section-title {
-    font-size: 28px;
-    margin-top: 40px;
-    margin-bottom: 20px;
-    border-left: 5px solid #41bdbd;
-    padding-left: 15px;
-  } */
 const page = () => {
     return (
-        <div className='max-w-[1500px] flex m-auto bg-[#0f0f0f] mt-15'>
+        <div className='max-w-[1500px] flex m-auto bg-[#0f0f0f]'>
             <div>
-                <h2 className='text-white pl-5 mt-5 text-2xl border-l-4 border-[#41bdbd] ml-4'>New Release</h2>
+                <h2 className='text-white pl-5'>New Release</h2>
 
                 <div className='p-5 flex gap-5 flex-wrap'>
                     <div className="mt-8 bg-[#1a1a1a] rounded-2xl w-60 relative">

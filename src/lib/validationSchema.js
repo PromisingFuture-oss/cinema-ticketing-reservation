@@ -10,10 +10,7 @@ export const signUpSchema = yup.object().shape({
     .required("Please enter a valid email or username"),
     password: yup.string()
     .min(8,"Password must contain 8 characters")
-    .required("Please enter a valid password")
-    .matches(/[A-Z]/, "Password must contain at least one uppercase letter")
-    .matches(/[a-z]/, "Password must contain at least one lowercase letter")
-    .matches(/[@$#^()_!%*?&]/, "Password must contain at least one special character"),
+    .required("Please enter a valid password"),
     confirm: yup.string()
     .oneOf([yup.ref('password'), null], "Password does not match!")
     .required("Please enter a valid password"),
@@ -21,9 +18,7 @@ export const signUpSchema = yup.object().shape({
 
 export const signInSchema = yup.object().shape({
     email: yup.string()
-    /* .email("Please enter a valid email or username") */
     .required("Please enter a valid email or username"),
     password: yup.string()
-    /* .min(8,"Password must contain 8 characters") */
     .required("Please enter a valid password"),
 })

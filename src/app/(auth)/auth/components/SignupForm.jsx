@@ -54,10 +54,10 @@ const SignupForm = () => {
     });
     return (
         <div className='h-screen flex items-center justify-center'>
-            <div className='flex flex-col items-center shadow-2xl rounded-xl py-3'>
+            <div className='flex flex-col items-center shadow-2xl rounded-xl w-110 py-6'>
                 <p className='mb-5 text-2xl font-semibold'>Signup</p>
                 <form action="#" method='POST' onSubmit={handleSubmit}>
-                    <div className='flex flex-col px-5'>
+                    <div className='flex flex-col'>
                         <div className='gap-2 flex flex-col mb-3'>
                             <input type='text'
                             value={values.name}

@@ -3,10 +3,12 @@ import axios from '@/lib/axios';
 
 export const options = {
     session: {
-        jwt: true,
+        strategy: 'jwt',
+        maxAge: 30 * 24 * 60 * 60, // 30 days
     },
     providers: [
         CredentialsProvider({
+            id: 'credentials',
             name: 'Credentials',
             credentials: {
                 email: { label: "Email", type: "text" },
@@ -31,6 +33,7 @@ export const options = {
                     }
                 }catch(error) {
                     console.error('Login error:', error.response?.data || error.message);
+                    throw new Error(error.response?.data?.error || 'Login failed');
                 }
                 return null;
             }
@@ -52,7 +55,6 @@ export const options = {
                 token.role = user.role;
                 token.name = user.name;
                 token.id = user.id;
-                token.bio = user.bio
             }
             return token;
         },
@@ -61,7 +63,6 @@ export const options = {
                 session.user.role = token.role;
                 session.user.name = token.name;
                 session.user.id = token.id;
-                session.user.bio = token.bio;
             }
             return session;
         }
